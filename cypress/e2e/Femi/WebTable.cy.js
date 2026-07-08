@@ -1,24 +1,23 @@
-describe('Alerts popup', ()=>{
-beforeEach('Load the page', ()=>{
-cy.visit('https://the-internet.herokuapp.com/tables')
-})
+describe('Web Tables', () => {
+  const TABLE_URL = 'https://the-internet.herokuapp.com/tables';
 
-it('table', ()=>{
-cy.get('')
-})
+  beforeEach('Load the tables page', () => {
+    cy.visit(TABLE_URL);
+  });
 
+  it('should verify table structure', () => {
+    cy.get('table').should('exist');
+  });
 
-it('table', ()=>{
-cy.get('')
-})
+  it('should verify table headers', () => {
+    cy.get('table thead').should('be.visible');
+  });
 
-it('table', ()=>{
-cy.get('')
-})
+  it('should verify table body rows', () => {
+    cy.get('table tbody tr').should('have.length.greaterThan', 0);
+  });
 
-it('table', ()=>{
-cy.get('')
-})
-
-
-})
+  it('should verify table data cells', () => {
+    cy.get('table tbody td').should('be.visible');
+  });
+});
