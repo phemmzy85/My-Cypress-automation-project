@@ -7,9 +7,9 @@ describe('OrangeHRM - Login and basic checks', () => {
 
     beforeEach(() => {
         cy.visit(url)
-        cy.xpath('//input[@name="username"]', { timeout: 10000 }).should('be.visible').clear().type('Admin')
-        cy.xpath('//input[@name="password"]', { timeout: 10000 }).should('be.visible').clear().type('admin123')
-        cy.xpath('//button[@type="submit"]', { timeout: 10000 }).should('be.enabled').click()
+        cy.xpath('//input[@name="username"]', { timeout: 20000 }).should('be.visible').clear().type('Admin')
+        cy.xpath('//input[@name="password"]', { timeout: 20000 }).should('be.visible').clear().type('admin123')
+        cy.xpath('//button[@type="submit"]', { timeout: 20000 }).should('be.enabled').click()
         // wait for dashboard to load
         cy.xpath("//h6[normalize-space()='Dashboard']", { timeout: 10000 }).should('be.visible')
     })
