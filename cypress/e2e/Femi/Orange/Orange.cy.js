@@ -33,6 +33,8 @@ describe('OrangeHRM - Login and basic checks', () => {
         cy.get('h6', { timeout: 15000 }).should('not.contain', 'Dashboard')
         cy.go('back')
         cy.xpath("//h6[normalize-space()='Dashboard']", { timeout: 15000 }).should('be.visible')
-
+        // reload and assert still on dashboard
+        cy.reload()
+        cy.xpath("//h6[normalize-space()='Dashboard']", { timeout: 15000 }).should('be.visible')
         })
 })
